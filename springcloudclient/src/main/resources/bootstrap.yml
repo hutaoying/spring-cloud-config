@@ -1,0 +1,25 @@
+# 设置服务(应用)名称
+spring:
+  application:
+    name: client-service
+
+  # 指定用于获取配置的配置中心服务(应用)名称
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: spring-cloud-config-server
+      # 指定分枝版本，默认为master
+#      label: master
+#      name: config
+      uri: http://localhost:8001/config-dev.properties
+#      profile: dev
+
+
+# 指定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+server:
+  port: 8002
